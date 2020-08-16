@@ -3,24 +3,19 @@
  *
  * @time: 2020-08-14 18:07
  *
- * @description: Title
+ * @description: 为方便管理action与type统一放在action中
  *
  * @function:
  *
  */
 
-import React from 'react';
-import {View} from 'react-native';
+export const INC = 'INC';
+export const DEC = 'DEC';
 
-export default class ations extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
+export const increment = () => ({
+  type: INC,
+});
 
-    render() {
-        return (
-            <View></View>
-        );
-    }
-}
+export const decrement = () => ({
+  type: DEC,
+});

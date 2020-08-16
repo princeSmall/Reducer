@@ -9,12 +9,13 @@
 import React from 'react';
 import {View} from 'react-native';
 import StoreScreen from './Store/StoreScreen';
+import ReduxStoreScreen from './Store/ReduxStoreScreen';
 
 const App: () => React$Node = () => {
-
   return (
     <View>
-      <StoreScreen />
+      <ReduxStoreScreen />
+      {/*<StoreScreen />*/}
     </View>
   );
 };

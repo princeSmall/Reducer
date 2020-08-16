@@ -3,33 +3,33 @@
  *
  * @time: 2020-08-14 18:08
  *
- * @description: Title
+ * @description: reducer管理数据
  *
  * @function:
  *
  */
+import {INC, DEC} from './ations';
 
 const initialState = {
-  count: 0,
+  age: 18,
+  name: 'TongLe',
 };
 
 function reducer(state = initialState, action) {
-  let newCount = 0;
   switch (action.type) {
-    case 'INC':
-      newCount = state.count + 1;
-      break;
-    case 'DEC':
-      newCount = state.count - 1;
-      break;
-    case 'RES':
-      newCount = 0;
-      break;
+    case INC:
+      return {
+        ...state,
+        age: state.age - 1,
+      };
+    case DEC:
+      return {
+        ...state,
+        age: state.age + 1,
+      };
     default:
       return state;
   }
-  console.log(newCount);
-  return {...state, count: newCount};
 }
 
 export default reducer;

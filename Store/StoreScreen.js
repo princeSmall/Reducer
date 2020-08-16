@@ -93,25 +93,21 @@ class StoreContentTop extends React.Component {
 }
 
 class StoreContentBottom extends React.Component {
-
-  textRender(){
-
+  textRender(content, isSub) {
+    return (
+      <TouchableOpacity
+        onPress={() => {
+          isSub ? this.props.onSubClick() : this.props.onAddClick();
+        }}>
+        <Text style={{fontSize: 40}}>{content}</Text>
+      </TouchableOpacity>
+    );
   }
   render() {
     return (
       <View style={styles.bottomContainer}>
-        <TouchableOpacity
-          onPress={() => {
-            this.props.onAddClick();
-          }}>
-          <Text style={{fontSize: 40}}>+</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {
-            this.props.onSubClick();
-          }}>
-          <Text style={{fontSize: 40}}>-</Text>
-        </TouchableOpacity>
+        {this.textRender('+', false)}
+        {this.textRender('-', true)}
       </View>
     );
   }
@@ -133,6 +129,7 @@ const styles = StyleSheet.create({
   },
   bottomContainer: {
     margin: 60,
+    flexDirection: 'row',
     backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center',
