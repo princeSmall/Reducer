@@ -21,12 +21,12 @@ export default class StoreScreen extends React.Component {
     };
   }
 
-  onSubClick() {
+  onDECClick() {
     this.setState({
       age: this.state.age - 1,
     });
   }
-  onAddClick() {
+  onINCClick() {
     this.setState({
       age: this.state.age + 1,
     });
@@ -37,18 +37,18 @@ export default class StoreScreen extends React.Component {
       <StoreContent
         name={this.state.name}
         age={this.state.age}
-        onSubClick={this.onSubClick.bind(this)}
-        onAddClick={this.onAddClick.bind(this)}
+        onDECClick={this.onDECClick.bind(this)}
+        onINCClick={this.onINCClick.bind(this)}
       />
     );
   }
 }
 class StoreContent extends React.Component {
-  onSubClick() {
-    this.props.onSubClick();
+  onINCClick() {
+    this.props.onINCClick();
   }
-  onAddClick() {
-    this.props.onAddClick();
+  onDECClick() {
+    this.props.onDECClick();
   }
   render() {
     return (
@@ -56,8 +56,8 @@ class StoreContent extends React.Component {
         {/*<StoreContentTopCenter name={this.props.name} age={this.props.age} />*/}
         <StoreContentTopCenter {...this.props} />
         <StoreContentBottom
-          onSubClick={this.onSubClick.bind(this)}
-          onAddClick={this.onAddClick.bind(this)}
+          onINCClick={this.onINCClick.bind(this)}
+          onDECClick={this.onDECClick.bind(this)}
         />
       </View>
     );
@@ -93,11 +93,11 @@ class StoreContentTop extends React.Component {
 }
 
 class StoreContentBottom extends React.Component {
-  textRender(content, isSub) {
+  textRender(content, isDec) {
     return (
       <TouchableOpacity
         onPress={() => {
-          isSub ? this.props.onSubClick() : this.props.onAddClick();
+          isDec ? this.props.onDECClick() : this.props.onINCClick();
         }}>
         <Text style={{fontSize: 40}}>{content}</Text>
       </TouchableOpacity>

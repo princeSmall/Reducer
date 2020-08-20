@@ -14,8 +14,8 @@ import ReduxStoreScreen from './Store/ReduxStoreScreen';
 const App: () => React$Node = () => {
   return (
     <View>
-      <ReduxStoreScreen />
-      {/*<StoreScreen />*/}
+      {/*<ReduxStoreScreen />*/}
+      <StoreScreen />
     </View>
   );
 };
