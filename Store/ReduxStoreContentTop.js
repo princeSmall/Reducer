@@ -15,14 +15,14 @@ import {connect} from 'react-redux';
 
 class ReduxStoreContentTop extends React.Component {
   render() {
-    return (
-      <View style={styles.topContainer}>
-        <View style={styles.innerContainer}>
-          <Text style={{color: 'white'}}>{this.props.name}</Text>
-          <Text style={{color: 'white'}}>{this.props.age}</Text>
-        </View>
-      </View>
-    );
+      return (
+          <View style={styles.topContainer}>
+            <View style={styles.innerContainer}>
+              <Text style={{color: 'white'}}>{this.props.name}</Text>
+              <Text style={{color: 'white'}}>{this.props.age}</Text>
+            </View>
+          </View>
+      );
   }
 }
 
